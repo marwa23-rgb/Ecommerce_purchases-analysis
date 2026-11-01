@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img src="dashboard/dashboard_preview.png" alt="Ecommerce purchases interactive dashboard" width="900">
+  <img src="dashboard_preview.png" alt="Ecommerce purchases interactive dashboard" width="900">
 </p>
 
 ---
@@ -85,7 +85,7 @@ This project explores the **Ecommerce Purchases** dataset from Kaggle. It cleans
 
 ## 📊 Interactive Dashboard
 
-`dashboard/ecommerce_dashboard.html` – download the file and open it in a browser. Select any bar or slice to filter every other chart, switch between counts and shares, and explore job-level averages.
+`ecommerce_dashboard.html` – download the file and open it in a browser. Select any bar or slice to filter every other chart, switch between counts and shares, and explore job-level averages.
 
 ---
 
@@ -94,9 +94,8 @@ This project explores the **Ecommerce Purchases** dataset from Kaggle. It cleans
 ```
 ├── Ecommerce Purchases.csv       # Original dataset
 ├── Ecommerce_purchases.ipynb     # Analysis notebook
-├── dashboard/
-│   ├── ecommerce_dashboard.html  # Interactive dashboard
-│   └── dashboard_preview.png     # Dashboard preview image
+├── ecommerce_dashboard.html      # Interactive dashboard
+├── dashboard_preview.png         # Dashboard preview image
 ├── .gitignore
 └── README.md
 ```
