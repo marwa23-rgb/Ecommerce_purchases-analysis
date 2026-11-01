@@ -100,36 +100,6 @@ This project explores the **Ecommerce Purchases** dataset from Kaggle. It cleans
 └── README.md
 ```
 
----
-
-## 🚀 How to Run
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/marwa23-rgb/Ecommerce_purchases.git
-cd Ecommerce_purchases
-
-# 2. Install the libraries
-pip install pandas matplotlib seaborn jupyter
-
-# 3. Open the notebook and run the cells in order
-jupyter notebook Ecommerce_purchases.ipynb
-```
-
----
-
-## 🔒 Data Note
-
-The Kaggle dataset is synthetic. The original CSV includes columns such as card numbers, security codes, addresses, and IP addresses, which this project does not use. The dashboard leaves them out. If you adapt this project to real customer data, remove or mask these fields before publishing.
-
----
-
-## 🔮 Next Steps
-
-- Segment customers into groups with similar purchase habits (e.g., clustering)
-- Test whether the small differences between groups are statistically significant
-
----
 
 ## 👩‍💻 Author
 
