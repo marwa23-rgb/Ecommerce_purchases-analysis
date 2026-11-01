@@ -12,6 +12,10 @@
   <a href="https://www.kaggle.com/utkarsharya/ecommerce-purchases"><img src="https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white" alt="Kaggle"></a>
 </p>
 
+<p align="center">
+  <img src="dashboard/dashboard_preview.png" alt="Ecommerce purchases interactive dashboard" width="900">
+</p>
+
 ---
 
 ## 📑 Table of Contents
@@ -105,7 +109,8 @@ The `PowerBI/` folder contains everything needed to rebuild the dashboard in Pow
 ├── Ecommerce Purchases.csv       # Original dataset
 ├── Ecommerce_purchases.ipynb     # Analysis notebook
 ├── dashboard/
-│   └── ecommerce_dashboard.html  # Interactive dashboard
+│   ├── ecommerce_dashboard.html  # Interactive dashboard
+│   └── dashboard_preview.png     # Dashboard preview image
 ├── PowerBI/
 │   ├── Ecommerce_Purchases_clean.csv
 │   ├── Ecommerce_Teal_Theme.json
