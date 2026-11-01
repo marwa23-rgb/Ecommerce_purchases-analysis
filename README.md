@@ -1,14 +1,14 @@
 <h1 align="center">🛒 Ecommerce Purchases Analysis</h1>
 
 <p align="center">
-  Exploratory data analysis of 10,000 online purchase records using Python
+  Exploratory data analysis of 10,000 online purchase records using Python, with an interactive dashboard and a Power BI kit
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8-3776AB?logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white" alt="Pandas">
   <img src="https://img.shields.io/badge/Seaborn-Visualization-4C8CBF" alt="Seaborn">
-  <img src="https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white" alt="Jupyter">
+  <img src="https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black" alt="Power BI">
   <a href="https://www.kaggle.com/utkarsharya/ecommerce-purchases"><img src="https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white" alt="Kaggle"></a>
 </p>
 
@@ -20,9 +20,10 @@
 - [At a Glance](#-at-a-glance)
 - [Workflow](#-workflow)
 - [Key Findings](#-key-findings)
-- [Visualizations](#-visualizations)
+- [Dashboards](#-dashboards)
 - [Repository Structure](#-repository-structure)
 - [How to Run](#-how-to-run)
+- [Data Note](#-data-note)
 - [Next Steps](#-next-steps)
 - [Author](#-author)
 
@@ -30,15 +31,15 @@
 
 ## 📌 Overview
 
-This project explores the **Ecommerce Purchases** dataset from Kaggle. It cleans the data, answers 12 business-style questions with Pandas, and visualizes the results with Matplotlib and Seaborn.
+This project explores the **Ecommerce Purchases** dataset from Kaggle. It cleans the data, answers 12 questions with Pandas, visualizes the results with Matplotlib and Seaborn, and turns the findings into an interactive dashboard and a Power BI build kit.
 
 ---
 
 ## ⚡ At a Glance
 
-| 🧾 Records | 🏷️ Avg. Purchase | 💰 Max Purchase | 🕐 AM / PM Split |
+| 🧾 Records | 🏷️ Avg. Purchase | 💰 Price Range | 🕐 AM / PM Split |
 |:---:|:---:|:---:|:---:|
-| **10,000** | **≈ $50.35** | **$99.99** | **4,932 / 5,068** |
+| **10,000** | **≈ $50.35** | **$0.00 – $99.99** | **4,932 / 5,068** |
 
 ---
 
@@ -48,6 +49,7 @@ This project explores the **Ecommerce Purchases** dataset from Kaggle. It cleans
 2. **Clean** – Dropped `Address`, `Lot`, `CC Security Code`, and `IP Address`. Checked for missing values and duplicates: **none found**.
 3. **Analyze** – Used filtering, `value_counts()`, and string operations to answer 12 questions.
 4. **Visualize** – Built count plots and a bar chart with Seaborn.
+5. **Dashboard** – Built an interactive HTML dashboard and a Power BI kit from the cleaned data.
 
 > **Final dataset:** 10,000 rows × 10 columns  
 > `AM or PM` · `Browser Info` · `Company` · `Credit Card` · `CC Exp Date` · `CC Provider` · `Email` · `Job` · `Language` · `Purchase Price`
@@ -58,40 +60,56 @@ This project explores the **Ecommerce Purchases** dataset from Kaggle. It cleans
 
 | # | Question | Result |
 |:---:|---|---|
-| 1 | Average purchase price | **≈ $50.35** |
+| 1 | Average purchase price | **≈ $50.35** (median $50.51) |
 | 2 | Highest purchase price | **$99.99** (*Surveyor, hydrographic* and *Surveyor, insurance*) |
-| 3 | Customers with French (`fr`) as language | **1,097** |
-| 4 | Most common languages | German and Russian tie at **1,155**; Chinese is lowest at 1,059 |
-| 5 | Job titles containing "engineer" | **984** |
-| 6 | Mastercard users with purchases above $50 | **405** |
-| 7 | Top credit card providers | **JCB 16 digit (1,716)** and **VISA 16 digit (1,715)** |
-| 8 | Purchases in AM vs. PM | **PM: 5,068** · **AM: 4,932** |
-| 9 | Cards expiring in 2020 | **988** |
-| 10 | Top email domains | hotmail.com (1,638) · yahoo.com (1,616) · gmail.com (1,605) |
-| 11 | Top browsers | **Mozilla (7,924)** · **Opera (2,076)** |
-| 12 | Top 7 purchases | Prices from $99.92 to $99.99 (job and company in the notebook) |
+| 3 | Lowest purchase price | **$0.00** (*Biomedical scientist* and *Stage manager*) |
+| 4 | Customers with French (`fr`) as language | **1,097** |
+| 5 | Most common languages | German and Russian tie at **1,155**; Chinese is lowest at 1,059 |
+| 6 | Job titles containing "engineer" | **984** |
+| 7 | Mastercard users with purchases above $50 | **405** |
+| 8 | Top credit card providers | **JCB 16 digit (1,716)** and **VISA 16 digit (1,715)** |
+| 9 | Purchases in AM vs. PM | **PM: 5,068** · **AM: 4,932** |
+| 10 | Cards expiring in 2020 | **988** |
+| 11 | Top email domains | hotmail.com (1,638) · yahoo.com (1,616) · gmail.com (1,605) |
+| 12 | Top browsers | **Mozilla (7,924)** · **Opera (2,076)** |
+
+**Observations**
+- Prices are spread almost evenly between $0 and $100: each $10 band holds about 10% of purchases.
+- Average price barely changes between card providers ($48.73 to $51.97), languages, or browsers. These gaps are small compared with the standard deviation of about $29.
+- Average price per job is unreliable for jobs with few purchases, so compare jobs only above a minimum count.
 
 ---
 
-## 📊 Visualizations
+## 📊 Dashboards
 
-| Chart | Description |
+### Interactive HTML dashboard
+`dashboard/ecommerce_dashboard.html` – download the file and open it in a browser. Select any bar or slice to filter every other chart, switch between counts and shares, and explore job-level averages.
+
+### Power BI
+The `PowerBI/` folder contains everything needed to rebuild the dashboard in Power BI Desktop:
+
+| File | Purpose |
 |---|---|
-| Count plot | Customers by language |
-| Bar plot | Purchase price by credit card provider |
-| Count plot | Purchases in the AM vs. PM |
+| `Ecommerce_Purchases_clean.csv` | Cleaned data with Price Band, Email Domain, Browser, and Expiry Year columns |
+| `Ecommerce_Teal_Theme.json` | Color theme (View → Themes → Browse for themes) |
+| `PowerBI_Build_Guide.md` | Step-by-step guide with DAX measures, visual layout, and check values |
 
-<!-- To show the charts here, export them from the notebook (plt.savefig('language.png')),
-     upload the PNGs to the repo, then add:
-     <p align="center"><img src="language.png" width="600"></p> -->
+<!-- Add screenshots of your Power BI report here:
+<p align="center"><img src="PowerBI/dashboard.png" width="900"></p> -->
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-├── Ecommerce Purchases.csv       # Dataset
+├── Ecommerce Purchases.csv       # Original dataset
 ├── Ecommerce_purchases.ipynb     # Analysis notebook
+├── dashboard/
+│   └── ecommerce_dashboard.html  # Interactive dashboard
+├── PowerBI/
+│   ├── Ecommerce_Purchases_clean.csv
+│   ├── Ecommerce_Teal_Theme.json
+│   └── PowerBI_Build_Guide.md
 ├── .gitignore
 └── README.md
 ```
@@ -114,11 +132,17 @@ jupyter notebook Ecommerce_purchases.ipynb
 
 ---
 
+## 🔒 Data Note
+
+The Kaggle dataset is synthetic. The original CSV includes columns such as card numbers, security codes, addresses, and IP addresses, which this project does not use. The cleaned file and the dashboards leave them out. If you adapt this project to real customer data, remove or mask these fields before publishing.
+
+---
+
 ## 🔮 Next Steps
 
-- Analyze purchase price by job, company, or time of day
+- Add screenshots of the Power BI report to this README
 - Segment customers into groups with similar purchase habits (e.g., clustering)
-- Build a simple dashboard of the main findings
+- Test whether the small differences between groups are statistically significant
 
 ---
 
