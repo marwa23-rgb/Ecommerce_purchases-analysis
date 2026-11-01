@@ -11,9 +11,6 @@
   <a href="https://www.kaggle.com/utkarsharya/ecommerce-purchases"><img src="https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white" alt="Kaggle"></a>
 </p>
 
-<p align="center">
-  <img src="dashboard_preview.png" alt="Ecommerce purchases interactive dashboard" width="900">
-</p>
 
 
 
