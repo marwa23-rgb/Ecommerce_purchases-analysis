@@ -1,14 +1,13 @@
 <h1 align="center">🛒 Ecommerce Purchases Analysis</h1>
 
 <p align="center">
-  Exploratory data analysis of 10,000 online purchase records using Python, with an interactive dashboard and a Power BI kit
+  Exploratory data analysis of 10,000 online purchase records using Python, with an interactive dashboard
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8-3776AB?logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white" alt="Pandas">
   <img src="https://img.shields.io/badge/Seaborn-Visualization-4C8CBF" alt="Seaborn">
-  <img src="https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black" alt="Power BI">
   <a href="https://www.kaggle.com/utkarsharya/ecommerce-purchases"><img src="https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle&logoColor=white" alt="Kaggle"></a>
 </p>
 
@@ -24,7 +23,7 @@
 - [At a Glance](#-at-a-glance)
 - [Workflow](#-workflow)
 - [Key Findings](#-key-findings)
-- [Dashboards](#-dashboards)
+- [Interactive Dashboard](#-interactive-dashboard)
 - [Repository Structure](#-repository-structure)
 - [How to Run](#-how-to-run)
 - [Data Note](#-data-note)
@@ -35,7 +34,7 @@
 
 ## 📌 Overview
 
-This project explores the **Ecommerce Purchases** dataset from Kaggle. It cleans the data, answers 12 questions with Pandas, visualizes the results with Matplotlib and Seaborn, and turns the findings into an interactive dashboard and a Power BI build kit.
+This project explores the **Ecommerce Purchases** dataset from Kaggle. It cleans the data, answers 12 questions with Pandas, visualizes the results with Matplotlib and Seaborn, and turns the findings into an interactive dashboard.
 
 ---
 
@@ -53,7 +52,7 @@ This project explores the **Ecommerce Purchases** dataset from Kaggle. It cleans
 2. **Clean** – Dropped `Address`, `Lot`, `CC Security Code`, and `IP Address`. Checked for missing values and duplicates: **none found**.
 3. **Analyze** – Used filtering, `value_counts()`, and string operations to answer 12 questions.
 4. **Visualize** – Built count plots and a bar chart with Seaborn.
-5. **Dashboard** – Built an interactive HTML dashboard and a Power BI kit from the cleaned data.
+5. **Dashboard** – Built an interactive HTML dashboard from the cleaned data.
 
 > **Final dataset:** 10,000 rows × 10 columns  
 > `AM or PM` · `Browser Info` · `Company` · `Credit Card` · `CC Exp Date` · `CC Provider` · `Email` · `Job` · `Language` · `Purchase Price`
@@ -84,22 +83,9 @@ This project explores the **Ecommerce Purchases** dataset from Kaggle. It cleans
 
 ---
 
-## 📊 Dashboards
+## 📊 Interactive Dashboard
 
-### Interactive HTML dashboard
 `dashboard/ecommerce_dashboard.html` – download the file and open it in a browser. Select any bar or slice to filter every other chart, switch between counts and shares, and explore job-level averages.
-
-### Power BI
-The `PowerBI/` folder contains everything needed to rebuild the dashboard in Power BI Desktop:
-
-| File | Purpose |
-|---|---|
-| `Ecommerce_Purchases_clean.csv` | Cleaned data with Price Band, Email Domain, Browser, and Expiry Year columns |
-| `Ecommerce_Teal_Theme.json` | Color theme (View → Themes → Browse for themes) |
-| `PowerBI_Build_Guide.md` | Step-by-step guide with DAX measures, visual layout, and check values |
-
-<!-- Add screenshots of your Power BI report here:
-<p align="center"><img src="PowerBI/dashboard.png" width="900"></p> -->
 
 ---
 
@@ -111,10 +97,6 @@ The `PowerBI/` folder contains everything needed to rebuild the dashboard in Pow
 ├── dashboard/
 │   ├── ecommerce_dashboard.html  # Interactive dashboard
 │   └── dashboard_preview.png     # Dashboard preview image
-├── PowerBI/
-│   ├── Ecommerce_Purchases_clean.csv
-│   ├── Ecommerce_Teal_Theme.json
-│   └── PowerBI_Build_Guide.md
 ├── .gitignore
 └── README.md
 ```
@@ -139,13 +121,12 @@ jupyter notebook Ecommerce_purchases.ipynb
 
 ## 🔒 Data Note
 
-The Kaggle dataset is synthetic. The original CSV includes columns such as card numbers, security codes, addresses, and IP addresses, which this project does not use. The cleaned file and the dashboards leave them out. If you adapt this project to real customer data, remove or mask these fields before publishing.
+The Kaggle dataset is synthetic. The original CSV includes columns such as card numbers, security codes, addresses, and IP addresses, which this project does not use. The dashboard leaves them out. If you adapt this project to real customer data, remove or mask these fields before publishing.
 
 ---
 
 ## 🔮 Next Steps
 
-- Add screenshots of the Power BI report to this README
 - Segment customers into groups with similar purchase habits (e.g., clustering)
 - Test whether the small differences between groups are statistically significant
 
