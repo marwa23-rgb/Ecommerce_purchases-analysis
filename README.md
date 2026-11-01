@@ -15,22 +15,7 @@
   <img src="dashboard_preview.png" alt="Ecommerce purchases interactive dashboard" width="900">
 </p>
 
----
 
-## 📑 Table of Contents
-
-- [Overview](#-overview)
-- [At a Glance](#-at-a-glance)
-- [Workflow](#-workflow)
-- [Key Findings](#-key-findings)
-- [Interactive Dashboard](#-interactive-dashboard)
-- [Repository Structure](#-repository-structure)
-- [How to Run](#-how-to-run)
-- [Data Note](#-data-note)
-- [Next Steps](#-next-steps)
-- [Author](#-author)
-
----
 
 ## 📌 Overview
 
