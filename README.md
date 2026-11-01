@@ -81,26 +81,6 @@ This project explores the **Ecommerce Purchases** dataset from Kaggle. It cleans
 - Average price barely changes between card providers ($48.73 to $51.97), languages, or browsers. These gaps are small compared with the standard deviation of about $29.
 - Average price per job is unreliable for jobs with few purchases, so compare jobs only above a minimum count.
 
----
-
-## 📊 Interactive Dashboard
-
-`ecommerce_dashboard.html` – download the file and open it in a browser. Select any bar or slice to filter every other chart, switch between counts and shares, and explore job-level averages.
-
----
-
-## 📁 Repository Structure
-
-```
-├── Ecommerce Purchases.csv       # Original dataset
-├── Ecommerce_purchases.ipynb     # Analysis notebook
-├── ecommerce_dashboard.html      # Interactive dashboard
-├── dashboard_preview.png         # Dashboard preview image
-├── .gitignore
-└── README.md
-```
-
-
 ## 👩‍💻 Author
 
 **Marwa Samy** · [GitHub](https://github.com/marwa23-rgb)
